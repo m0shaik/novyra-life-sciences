@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from "lucide-react";
-import placeholderBrand from "@/assets/meta-data-image.png";
+import logo from "@/assets/logo.svg";
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -37,9 +37,9 @@ const Footer = () => {
                     <div className="lg:col-span-1">
                         <Link to="/" className="flex items-center space-x-3 mb-6">
                             <img
-                                src={placeholderBrand}
-                                alt="Temporary Novyra brand placeholder"
-                                className="w-11 h-11 rounded-none object-cover border-2 border-black"
+                                src={logo}
+                                alt="Novyra Life Sciences logo"
+                                className="h-12 w-12 object-contain"
                             />
                             <div>
                                 <h3 className="text-lg font-bold text-black">

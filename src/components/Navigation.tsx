@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.svg";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,10 +21,7 @@ const Navigation = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-20">
           <Link to="/" className="flex items-center space-x-3 transition-all duration-300 hover:opacity-80">
-            <span className="relative block h-8 w-8" aria-hidden="true">
-              <span className="absolute left-1 top-3 h-4 w-4 rounded-md bg-[#f2bf21]"></span>
-              <span className="absolute right-1 top-1 h-4 w-4 rounded-md bg-[#CAE7D3]"></span>
-            </span>
+            <img src={logo} alt="Novyra Life Sciences logo" className="h-11 w-11 object-contain md:h-12 md:w-12" />
             <div className="hidden sm:block">
               <h1 className="text-xl md:text-2xl font-bold text-[#111111] transition-colors duration-300">
                 Novyra
