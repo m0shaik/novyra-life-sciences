@@ -57,17 +57,16 @@ const Footer = () => {
                         <div className="space-y-3">
                             <div className="flex items-center space-x-3 text-sm">
                                 <Phone className="w-4 h-4 text-black" />
-                                <span>517-303-6867</span>
+                                <span>+1 858-744-3393</span>
                             </div>
                             <div className="flex items-center space-x-3 text-sm">
                                 <Mail className="w-4 h-4 text-black" />
-                                <span>info@novyra.com</span>
+                                <span>abdul@novyralifesciences.com</span>
                             </div>
                             <div className="flex items-center space-x-3 text-sm">
                                 <MapPin className="w-4 h-4 text-black" />
-                                <span>1735 winding rd
-                                    Suite 107
-                                    Muskegon, Mi 49444
+                                <span>307 S Kendall Ave
+                                    Kalamazoo, Michigan 49006
                                 </span>
                             </div>
                         </div>

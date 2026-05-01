@@ -46,7 +46,7 @@ const Contact = () => {
         from_email: formData.email,
         from_phone: formData.phone,
         message: formData.query,
-        to_email: 'info@novyra.com',
+        to_email: 'abdul@novyralifesciences.com',
         reply_to: formData.email,
       };
 
@@ -70,14 +70,14 @@ const Contact = () => {
       // Specific error messages for common issues
       if (error instanceof Error) {
         if (error.message.includes('not configured')) {
-          toast.error('Email service not configured. Please contact us directly at info@novyra.com');
+          toast.error('Email service not configured. Please contact us directly at abdul@novyralifesciences.com');
         } else if (error.message.includes('not found')) {
-          toast.error('Email configuration error. Please contact us directly at info@novyra.com');
+          toast.error('Email configuration error. Please contact us directly at abdul@novyralifesciences.com');
         } else {
-          toast.error('Failed to send message. Please try again or contact us directly at info@novyra.com');
+          toast.error('Failed to send message. Please try again or contact us directly at abdul@novyralifesciences.com');
         }
       } else {
-        toast.error('Failed to send message. Please try again or contact us directly at info@novyra.com');
+        toast.error('Failed to send message. Please try again or contact us directly at abdul@novyralifesciences.com');
       }
     } finally {
       setIsSubmitting(false);
@@ -88,17 +88,17 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Corporate Headquarters",
-      details: ["1735 winding rd", "Suite 107", "Muskegon, Mi 49444"],
+      details: ["307 S Kendall Ave", "Kalamazoo, Michigan 49006"],
     },
     {
       icon: Phone,
       title: "Direct Communication",
-      details: ["+1 517-303-6867"],
+      details: ["+1 858-744-3393"],
     },
     {
       icon: Mail,
       title: "Electronic Correspondence",
-      details: ["info@novyra.com"],
+      details: ["abdul@novyralifesciences.com"],
     },
     {
       icon: Clock,
@@ -171,7 +171,7 @@ const Contact = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent transition-opacity duration-300 hover:opacity-60"></div>
                   <div className="absolute bottom-4 left-4 text-white animate-slide-in-left animate-stagger-2 bg-black/70 p-4">
                     <h4 className="font-semibold mb-1">Corporate Headquarters</h4>
-                    <p className="text-white/90 text-sm">Muskegon, MI 49444</p>
+                    <p className="text-white/90 text-sm">Kalamazoo, Michigan 49006</p>
                   </div>
                 </div>
               </div>
@@ -299,7 +299,7 @@ const Contact = () => {
             <div className="text-center relative z-10 bg-white p-8 rounded-none border-2 border-black backdrop-blur-sm animate-scale-in animate-stagger-2 hover-glow">
               <MapPin className="w-16 h-16 text-black mx-auto mb-4 animate-float" />
               <h3 className="text-xl font-semibold mb-2 animate-fade-up animate-stagger-3">Interactive Mapping Interface Coming Soon</h3>
-              <p className="text-muted-foreground animate-fade-up animate-stagger-4">1735 winding rd, Suite 107 <br />Muskegon, MI 49444</p>
+              <p className="text-muted-foreground animate-fade-up animate-stagger-4">307 S Kendall Ave <br />Kalamazoo, Michigan 49006</p>
             </div>
           </div>
         </div>
