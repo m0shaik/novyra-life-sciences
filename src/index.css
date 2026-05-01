@@ -1,59 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Novyra Life Sciences Design System - Engineering Excellence */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* Novyra Life Sciences Design System */
 
 @layer base {
   :root {
-    /* Brand Colors - Professional Engineering Palette */
-    --background: 0 0% 99%;
-    --foreground: 215 28% 17%;
+    --background: 135 38% 85%;
+    --foreground: 0 0% 3%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 215 28% 17%;
+    --card: 211 34% 84%;
+    --card-foreground: 0 0% 3%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 28% 17%;
+    --popover: 135 38% 85%;
+    --popover-foreground: 0 0% 3%;
 
-    /* Primary - Novyra Golden */
-    --primary: 43 76% 55%;
-    --primary-foreground: 0 0% 100%;
-    --primary-light: 45 86% 70%;
-    --primary-dark: 38 65% 45%;
+    --primary: 135 38% 85%;
+    --primary-foreground: 0 0% 3%;
+    --primary-light: 135 55% 92%;
+    --primary-dark: 134 26% 70%;
 
-    /* Secondary - Professional Charcoal */
-    --secondary: 215 28% 17%;
-    --secondary-foreground: 0 0% 100%;
-    --secondary-light: 215 20% 25%;
+    --secondary: 211 34% 84%;
+    --secondary-foreground: 0 0% 3%;
+    --secondary-light: 210 44% 91%;
 
-    /* Accent Colors */
-    --accent: 210 20% 94%;
-    --accent-foreground: 215 28% 17%;
-    --accent-blue: 217 91% 60%;
+    --accent: 0 0% 100%;
+    --accent-foreground: 0 0% 3%;
+    --accent-blue: 211 34% 84%;
 
-    --muted: 210 20% 94%;
-    --muted-foreground: 215 13% 50%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 24%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 90%;
-    --input: 220 13% 90%;
-    --ring: 43 76% 55%;
+    --border: 0 0% 3%;
+    --input: 0 0% 3%;
+    --ring: 0 0% 3%;
 
-    /* Engineering Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(43 76% 55% / 0.95), hsl(38 65% 45% / 0.95));
-    --gradient-section: linear-gradient(180deg, hsl(0 0% 99%), hsl(210 20% 98%));
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 20% 98%));
+    --gradient-hero: linear-gradient(135deg, #CAE7D3, #CBD6E2);
+    --gradient-section: linear-gradient(180deg, #CAE7D3, #CBD6E2);
+    --gradient-card: linear-gradient(145deg, #ffffff, #CBD6E2);
 
-    /* Professional Shadows */
-    --shadow-soft: 0 2px 8px hsl(215 28% 17% / 0.04);
-    --shadow-medium: 0 4px 16px hsl(215 28% 17% / 0.08);
-    --shadow-strong: 0 8px 32px hsl(215 28% 17% / 0.12);
-    --shadow-golden: 0 4px 20px hsl(43 76% 55% / 0.15);
+    --shadow-soft: 0 6px 0 hsl(0 0% 3% / 1);
+    --shadow-medium: 0 8px 0 hsl(0 0% 3% / 1);
+    --shadow-strong: 0 12px 0 hsl(0 0% 3% / 1);
+    --shadow-golden: 0 8px 0 hsl(0 0% 3% / 1);
 
     /* Smooth Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -128,7 +122,10 @@
     font-weight: 300;
   }
 
-  /* Professional Typography Scale - Lightweight and Elegant */
+  section {
+    color: #050505;
+  }
+
   h1 {
     @apply font-bold text-4xl md:text-5xl lg:text-6xl leading-tight;
     font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -327,21 +324,21 @@
 
   /* Hero Text Styling - Lightweight and Elegant */
   .hero-text {
-    @apply text-white font-bold text-5xl md:text-6xl lg:text-7xl leading-tight;
+    @apply text-black font-bold text-5xl md:text-6xl lg:text-7xl leading-tight;
     font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    text-shadow: none;
     font-weight: 600;
   }
 
   .hero-subtitle {
-    @apply text-white/90 text-lg md:text-xl lg:text-2xl leading-relaxed;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    @apply text-black/75 text-lg md:text-xl lg:text-2xl leading-relaxed;
+    text-shadow: none;
     font-weight: 300;
   }
 
   /* Professional Cards */
   .card-professional {
-    @apply bg-card rounded-lg shadow-medium border border-border/50 transition-smooth;
+    @apply bg-card rounded-none shadow-medium border-2 border-black transition-smooth;
   }
 
   .card-professional:hover {

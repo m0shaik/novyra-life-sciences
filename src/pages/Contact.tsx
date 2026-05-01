@@ -110,11 +110,11 @@ const Contact = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-24 md:py-36 bg-gradient-to-br from-[#CBD6E2] to-[#CAE7D3] text-black border-b-2 border-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="mb-6 animate-fade-up">Connect with Our Team</h1>
-            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed animate-fade-up">
+            <h1 className="mb-6 animate-fade-up text-black">Connect with Our Team</h1>
+            <p className="text-xl md:text-2xl text-black/75 leading-relaxed animate-fade-up">
               Ready to transform your engineering capabilities? Let's explore how Novyra Life Sciences can accelerate your technical innovation and organizational success.
             </p>
           </div>
@@ -122,7 +122,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Content */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
+      <section className="py-20 bg-[#CAE7D3]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             {/* Contact Information */}
@@ -134,15 +134,15 @@ const Contact = () => {
 
               <div className="space-y-8">
                 {contactInfo.map((item, index) => (
-                  <div key={item.title} className={`flex items-start space-x-4 animate-slide-in-left animate-stagger-${index + 1} hover-lift p-4 rounded-lg transition-all duration-300`}>
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1 animate-bounce-in animate-stagger-2 hover-pulse">
-                      <item.icon className="w-6 h-6 text-primary transition-transform duration-300 hover:scale-110" />
+                  <div key={item.title} className={`flex items-start space-x-4 animate-slide-in-left animate-stagger-${index + 1} hover-lift p-4 rounded-none border-2 border-black bg-white transition-all duration-300`}>
+                    <div className="w-12 h-12 bg-[#CBD6E2] rounded-none border-2 border-black flex items-center justify-center flex-shrink-0 mt-1 animate-bounce-in animate-stagger-2 hover-pulse">
+                      <item.icon className="w-6 h-6 text-secondary transition-transform duration-300 hover:scale-110" />
                     </div>
                     <div>
                       <h3 className="font-semibold mb-2 animate-fade-up animate-stagger-3">{item.title}</h3>
                       <div className="space-y-1">
                         {item.details.map((detail, idx) => (
-                          <p key={idx} className="text-muted-foreground animate-fade-up animate-stagger-4 transition-colors duration-300 hover:text-primary">
+                          <p key={idx} className="text-muted-foreground animate-fade-up animate-stagger-4 transition-colors duration-300 hover:text-black">
                             {detail}
                           </p>
                         ))}
@@ -153,8 +153,8 @@ const Contact = () => {
               </div>
 
               {/* Quick Response Promise */}
-              <div className="mt-12 p-6 bg-primary/5 rounded-lg border border-primary/20 animate-scale-in animate-stagger-5 hover-glow">
-                <h3 className="font-semibold mb-2 text-primary animate-fade-up">Rapid Response Commitment</h3>
+              <div className="mt-12 p-6 bg-[#CBD6E2] rounded-none border-2 border-black animate-scale-in animate-stagger-5 hover-glow">
+                <h3 className="font-semibold mb-2 text-black animate-fade-up">Rapid Response Commitment</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed animate-fade-up animate-stagger-2">
                   We recognize the time-sensitive nature of engineering projects. Our dedicated team provides responses to all inquiries within 3 hours during business operations, with emergency technical support available around the clock.
                 </p>
@@ -162,14 +162,14 @@ const Contact = () => {
 
               {/* Office Image */}
               <div className="mt-8 animate-fade-up animate-stagger-6">
-                <div className="relative rounded-lg overflow-hidden shadow-medium hover-lift">
+                <div className="relative rounded-none overflow-hidden shadow-medium hover-lift border-2 border-black">
                   <img
                     src={officeBuildingImage}
                     alt="Novyra Life Sciences office building headquarters"
                     className="w-full h-64 object-cover transition-transform duration-700 hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent transition-opacity duration-300 hover:opacity-60"></div>
-                  <div className="absolute bottom-4 left-4 text-white animate-slide-in-left animate-stagger-2">
+                  <div className="absolute bottom-4 left-4 text-white animate-slide-in-left animate-stagger-2 bg-black/70 p-4">
                     <h4 className="font-semibold mb-1">Corporate Headquarters</h4>
                     <p className="text-white/90 text-sm">Muskegon, MI 49444</p>
                   </div>
@@ -181,7 +181,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white border-y-2 border-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-12">
@@ -263,7 +263,7 @@ const Contact = () => {
                   type="submit"
                   size="lg"
                   disabled={isSubmitting}
-                  className="w-full bg-primary hover:bg-primary/90 text-white shadow-golden hover:shadow-lg transition-all duration-300 group disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-black hover:bg-black/80 text-white rounded-none shadow-golden hover:shadow-lg transition-all duration-300 group disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <Send className="w-5 h-5 mr-2 transition-transform duration-300 group-hover:translate-x-1" />
                   {isSubmitting ? 'Sending...' : 'Send Message'}
@@ -279,7 +279,7 @@ const Contact = () => {
       </section>
 
       {/* Map Section */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-20 bg-[#CBD6E2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="mb-4">Explore Our Facilities</h2>
@@ -288,7 +288,7 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="bg-muted/50 rounded-lg h-96 flex items-center justify-center relative overflow-hidden animate-fade-up hover-lift">
+          <div className="bg-[#CAE7D3] rounded-none h-96 flex items-center justify-center relative overflow-hidden animate-fade-up hover-lift border-2 border-black">
             <div className="absolute inset-0 opacity-20 transition-opacity duration-500 hover:opacity-30">
               <img
                 src={officeBuildingImage}
@@ -296,8 +296,8 @@ const Contact = () => {
                 className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110"
               />
             </div>
-            <div className="text-center relative z-10 bg-background/80 p-8 rounded-lg backdrop-blur-sm animate-scale-in animate-stagger-2 hover-glow">
-              <MapPin className="w-16 h-16 text-primary mx-auto mb-4 animate-float" />
+            <div className="text-center relative z-10 bg-white p-8 rounded-none border-2 border-black backdrop-blur-sm animate-scale-in animate-stagger-2 hover-glow">
+              <MapPin className="w-16 h-16 text-black mx-auto mb-4 animate-float" />
               <h3 className="text-xl font-semibold mb-2 animate-fade-up animate-stagger-3">Interactive Mapping Interface Coming Soon</h3>
               <p className="text-muted-foreground animate-fade-up animate-stagger-4">1735 winding rd, Suite 107 <br />Muskegon, MI 49444</p>
             </div>
