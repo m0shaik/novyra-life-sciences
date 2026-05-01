@@ -8,13 +8,13 @@
 
 @layer base {
   :root {
-    --background: 135 38% 85%;
+    --background: 47 30% 81%;
     --foreground: 0 0% 3%;
 
-    --card: 211 34% 84%;
+    --card: 48 58% 95%;
     --card-foreground: 0 0% 3%;
 
-    --popover: 135 38% 85%;
+    --popover: 48 58% 95%;
     --popover-foreground: 0 0% 3%;
 
     --primary: 135 38% 85%;
@@ -26,7 +26,7 @@
     --secondary-foreground: 0 0% 3%;
     --secondary-light: 210 44% 91%;
 
-    --accent: 0 0% 100%;
+    --accent: 48 58% 95%;
     --accent-foreground: 0 0% 3%;
     --accent-blue: 211 34% 84%;
 
@@ -36,18 +36,18 @@
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 3%;
-    --input: 0 0% 3%;
+    --border: 0 0% 80%;
+    --input: 0 0% 80%;
     --ring: 0 0% 3%;
 
-    --gradient-hero: linear-gradient(135deg, #CAE7D3, #CBD6E2);
-    --gradient-section: linear-gradient(180deg, #CAE7D3, #CBD6E2);
-    --gradient-card: linear-gradient(145deg, #ffffff, #CBD6E2);
+    --gradient-hero: linear-gradient(135deg, #fbf7ea, #f4eedf);
+    --gradient-section: linear-gradient(180deg, #fbf7ea, #f1ead7);
+    --gradient-card: linear-gradient(145deg, #ffffff, #fbf7ea);
 
-    --shadow-soft: 0 6px 0 hsl(0 0% 3% / 1);
-    --shadow-medium: 0 8px 0 hsl(0 0% 3% / 1);
-    --shadow-strong: 0 12px 0 hsl(0 0% 3% / 1);
-    --shadow-golden: 0 8px 0 hsl(0 0% 3% / 1);
+    --shadow-soft: 0 14px 35px hsl(44 26% 18% / 0.08);
+    --shadow-medium: 0 22px 50px hsl(44 26% 18% / 0.12);
+    --shadow-strong: 0 30px 70px hsl(44 26% 18% / 0.16);
+    --shadow-golden: 0 16px 36px hsl(43 88% 54% / 0.22);
 
     /* Smooth Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -338,7 +338,7 @@
 
   /* Professional Cards */
   .card-professional {
-    @apply bg-card rounded-none shadow-medium border-2 border-black transition-smooth;
+    @apply bg-card rounded-[28px] shadow-medium border border-black/10 transition-smooth;
   }
 
   .card-professional:hover {

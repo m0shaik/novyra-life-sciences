@@ -76,10 +76,11 @@ const Index = () => {
       <HeroSection />
 
       {/* Services Overview */}
-      <section className="py-20 md:py-32 bg-[#CBD6E2] border-y-2 border-black">
+      <section className="bg-[#ded7bd] px-3 py-4 md:px-6 md:py-6">
+        <div className="rounded-[28px] bg-[#fbf7ea] py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-16">
-            <h2 className="mb-4 animate-fade-up">Integrated Engineering Excellence Under One Roof</h2>
+          <div className="mb-16 grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+            <h2 className="max-w-2xl text-5xl font-semibold leading-[1.02] tracking-[-0.04em] animate-fade-up">Integrated Engineering Excellence Under One Roof</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-fade-up">
               Strategic Engineering Advisory, Advanced Project Leadership, and Elite Technical Talent Solutions
             </p>
@@ -88,17 +89,17 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
             {services.map((service, index) => (
               <div key={service.title} className={`card-professional overflow-hidden hover-lift ${index === 0 ? 'animate-slide-in-left' : 'animate-slide-in-right'}`}>
-                <div className="relative h-56 overflow-hidden">
+                <div className="relative h-64 overflow-hidden">
                   <img
                     src={service.image}
                     alt={`${service.title} - Professional engineering solutions`}
                     className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/45 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                 </div>
                 <div className="p-8 md:p-12">
-                  <div className="w-14 h-14 bg-[#CAE7D3] rounded-none border-2 border-black flex items-center justify-center mb-6 animate-bounce-in animate-stagger-3">
-                    <service.icon className="w-7 h-7 text-secondary" />
+                  <div className="w-14 h-14 bg-[#CAE7D3] rounded-2xl flex items-center justify-center mb-6 animate-bounce-in animate-stagger-3">
+                    <service.icon className="w-7 h-7 text-black" />
                   </div>
                   <h3 className="mb-4 animate-fade-up animate-stagger-4">{service.title}</h3>
                   <p className="text-lg text-muted-foreground leading-relaxed mb-6 animate-fade-up animate-stagger-5">
@@ -109,13 +110,15 @@ const Index = () => {
             ))}
           </div>
         </div>
+        </div>
       </section>
 
       {/* Industry Expertise */}
-      <section className="py-20 md:py-32 bg-[#CAE7D3] text-black">
+      <section className="bg-[#ded7bd] px-3 py-4 md:px-6 md:py-6">
+        <div className="rounded-[28px] bg-[#CAE7D3] py-20 md:py-28 text-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="mb-4 text-black">Domain-Specific Technical Mastery</h2>
+            <h2 className="mb-4 text-black text-5xl tracking-[-0.04em]">Domain-Specific Technical Mastery</h2>
             <p className="text-xl text-black/70 max-w-3xl mx-auto leading-relaxed">
               Profound technical understanding across mission-critical engineering sectors and emerging technology landscapes
             </p>
@@ -123,8 +126,8 @@ const Index = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {industries.map((industry, index) => (
-              <div key={industry.title} className={`bg-white rounded-none shadow-soft border-2 border-black hover-glow transition-smooth overflow-hidden group animate-fade-up animate-stagger-${(index % 6) + 1}`}>
-                <div className="relative h-36 overflow-hidden">
+              <div key={industry.title} className={`bg-[#fbf7ea] rounded-[24px] shadow-soft border border-black/10 hover-glow transition-smooth overflow-hidden group animate-fade-up animate-stagger-${(index % 6) + 1}`}>
+                <div className="relative h-44 overflow-hidden">
                   <img
                     src={industry.image}
                     alt={`${industry.title} - Engineering expertise`}
@@ -142,14 +145,16 @@ const Index = () => {
             ))}
           </div>
         </div>
+        </div>
       </section>
 
       {/* Value Proposition */}
-      <section className="py-20 md:py-32 bg-white border-y-2 border-black">
+      <section className="bg-[#ded7bd] px-3 py-4 md:px-6 md:py-6">
+        <div className="rounded-[28px] bg-[#fbf7ea] py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="animate-slide-in-left">
-              <h2 className="mb-6">Transform. Optimize. Excel.</h2>
+              <h2 className="mb-6 text-5xl tracking-[-0.04em]">Transform. Optimize. Excel.</h2>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed animate-fade-up animate-stagger-2">
                 Our distinguished engineering teams leverage advanced technical knowledge alongside proven implementation frameworks to achieve outstanding outcomes. From strategic planning through final deployment, we champion innovation and drive operational transformation.
               </p>
@@ -164,7 +169,7 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="card-professional p-8 text-center animate-slide-in-right hover-glow border-primary/30">
+            <div className="card-professional p-8 text-center animate-slide-in-right hover-glow">
               <Award className="w-16 h-16 text-black mx-auto mb-6 animate-float" />
               <h3 className="mb-4 animate-fade-up animate-stagger-2">Technical Consultancy recognition from clients. </h3>
               <p className="text-muted-foreground mb-6 leading-relaxed animate-fade-up animate-stagger-3">
@@ -173,7 +178,7 @@ const Index = () => {
 
               {/* Client Testimonials */}
               <div className="space-y-6 mb-8">
-                <div className="bg-[#CAE7D3] rounded-none p-4 border-2 border-black animate-fade-up animate-stagger-4">
+                <div className="bg-[#CAE7D3] rounded-2xl p-4 animate-fade-up animate-stagger-4">
                   <div className="flex items-center justify-center mb-2">
                     <span className="font-semibold text-black">Pfizer</span>
                   </div>
@@ -182,7 +187,7 @@ const Index = () => {
                   </p>
                 </div>
 
-                <div className="bg-[#CBD6E2] rounded-none p-4 border-2 border-black animate-fade-up animate-stagger-5">
+                <div className="bg-[#CBD6E2] rounded-2xl p-4 animate-fade-up animate-stagger-5">
                   <div className="flex items-center justify-center mb-2">
                     <span className="font-semibold text-black">Novartis</span>
                   </div>
@@ -205,23 +210,26 @@ const Index = () => {
             </div>
           </div>
         </div>
+        </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 md:py-32 bg-[#CBD6E2] text-black">
+      <section className="bg-[#ded7bd] px-3 pb-4 pt-4 md:px-6 md:pb-6 md:pt-6">
+        <div className="rounded-[28px] bg-[#CBD6E2] py-20 md:py-28 text-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="mb-6 text-black animate-fade-up">Join Forces with Novyra. Witness True Excellence.</h2>
+          <h2 className="mb-6 text-black text-5xl tracking-[-0.04em] animate-fade-up">Join Forces with Novyra. Witness True Excellence.</h2>
           <p className="text-xl text-black/75 mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-up animate-stagger-2">
             Our distinguished engineering professionals possess the technical mastery and proven experience to propel your organization forward. Connect with us to explore how we can transform your engineering objectives into remarkable achievements.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-scale-in animate-stagger-3">
             <Link to="/contact">
-              <Button size="lg" variant="outline" className="bg-black text-white hover:bg-black/80 rounded-none border-black px-8 py-4 text-lg hover-glow transition-all duration-300">
+              <Button size="lg" variant="outline" className="rounded-full bg-black text-white hover:bg-black/80 border-black px-8 py-4 text-lg hover-glow transition-all duration-300">
                 Connect with Our Team
               </Button>
             </Link>
           </div>
+        </div>
         </div>
       </section>
     </div>
