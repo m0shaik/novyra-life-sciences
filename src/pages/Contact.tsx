@@ -103,7 +103,7 @@ const Contact = () => {
     {
       icon: Clock,
       title: "Operating Schedule",
-      details: ["Monday - Friday: 7:30 AM - 7:00 PM EST", "Saturday: 9:00 AM - 3:00 PM EST ", "Sunday: By Appointment"],
+      details: ["Monday - Friday: 7:30 AM - 7:00 PM EST"],
     },
   ];
 
