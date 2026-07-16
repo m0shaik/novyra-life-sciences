@@ -46,7 +46,7 @@ const Contact = () => {
         from_email: formData.email,
         from_phone: formData.phone,
         message: formData.query,
-        to_email: 'abdul@novyralifesciences.com',
+        to_email: 'hr@novyralifesciences.com',
         reply_to: formData.email,
       };
 
@@ -70,14 +70,14 @@ const Contact = () => {
       // Specific error messages for common issues
       if (error instanceof Error) {
         if (error.message.includes('not configured')) {
-          toast.error('Email service not configured. Please contact us directly at abdul@novyralifesciences.com');
+          toast.error('Email service not configured. Please contact us directly at hr@novyralifesciences.com');
         } else if (error.message.includes('not found')) {
-          toast.error('Email configuration error. Please contact us directly at abdul@novyralifesciences.com');
+          toast.error('Email configuration error. Please contact us directly at hr@novyralifesciences.com');
         } else {
-          toast.error('Failed to send message. Please try again or contact us directly at abdul@novyralifesciences.com');
+          toast.error('Failed to send message. Please try again or contact us directly at hr@novyralifesciences.com');
         }
       } else {
-        toast.error('Failed to send message. Please try again or contact us directly at abdul@novyralifesciences.com');
+        toast.error('Failed to send message. Please try again or contact us directly at hr@novyralifesciences.com');
       }
     } finally {
       setIsSubmitting(false);
@@ -98,7 +98,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Electronic Correspondence",
-      details: ["abdul@novyralifesciences.com"],
+      details: ["hr@novyralifesciences.com"],
     },
     {
       icon: Clock,
