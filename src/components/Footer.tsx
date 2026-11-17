@@ -101,8 +101,8 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-emerald-400 flex-shrink-0" />
-                <a href="mailto:contact@novyralifesciences.com" className="hover:text-white transition-colors">
-                  contact@novyralifesciences.com
+                <a href="mailto:hr@novyralifesciences.com" className="hover:text-white transition-colors">
+                  hr@novyralifesciences.com
                 </a>
               </div>
               <div className="flex items-start space-x-3">
