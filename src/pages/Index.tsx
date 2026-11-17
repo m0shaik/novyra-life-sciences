@@ -1,143 +1,234 @@
-import { Cog, Users, Award, ArrowRight, CheckCircle, Zap, Factory, Leaf } from "lucide-react";
+import {
+  Cog,
+  Users,
+  Award,
+  ArrowRight,
+  CheckCircle,
+  Zap,
+  Factory,
+  Leaf,
+  ShieldCheck,
+  TrendingUp,
+  Clock,
+  Sparkles,
+  ArrowUpRight
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import HeroSection from "@/components/HeroSection";
-import renewableImage from "@/assets/diversity.jpg";
-import manufacturingImage from "@/assets/pharma.jpg";
-import foodProcessingImage from "@/assets/bio-tech.jpeg";
-import sustainableImage from "@/assets/renewable-energy.jpg";
+
+// Unique authentic assets
+import biotechImage from "@/assets/bio-tech.jpeg";
+import pharmaImage from "@/assets/pharma.jpg";
+import automationImage from "@/assets/manufacturing-automation.jpg";
+import renewableImage from "@/assets/renewable-energy.jpg";
 import foodImage from "@/assets/food.jpg";
 import softwareImage from "@/assets/software.jpeg";
-
-
-
+import diversityImage from "@/assets/diversity.jpg";
+import technicalImage from "@/assets/technical.jpeg";
 
 const Index = () => {
   const services = [
     {
-      title: "Strategic Engineering Consulting",
-      description: "Comprehensive technical advisory services and project leadership for sophisticated engineering challenges spanning industrial automation, sustainable manufacturing, and next-generation energy systems.",
+      title: "Strategic Engineering Advisory",
+      description:
+        "Comprehensive technical advisory and project leadership for complex engineering initiatives spanning cleanrooms, automated bioprocessing, and scalable manufacturing systems.",
       icon: Cog,
-      image: manufacturingImage,
+      image: pharmaImage,
+      tags: ["Bioprocess Scale-up", "Facility Automation", "Process Validation", "cGMP Compliance"],
     },
     {
       title: "Specialized Technical Recruitment",
-      description: "Elite talent acquisition solutions connecting innovative organizations with exceptional engineering professionals who possess deep domain expertise and proven track records in technical excellence.",
+      description:
+        "Precision talent acquisition connecting life sciences enterprises with high-caliber engineers, automation specialists, quality assurance directors, and project leaders.",
       icon: Users,
-      image: renewableImage,
+      image: diversityImage,
+      tags: ["Direct Hire & Executive Search", "Project Team Augmentation", "Embedded Engineers", "Vetted Subject Matter Experts"],
     },
   ];
 
   const industries = [
     {
-      title: "Industrial Automation & Robotics",
-      description: "Cutting-edge automation technologies and intelligent robotic systems designed to optimize manufacturing workflows and operational efficiency.",
-      image: manufacturingImage,
-    },
-    {
       title: "Life Sciences & Biotechnology",
-      description: "Specialized engineering support for pharmaceutical innovation, biotechnology research, and precision medical device development initiatives.",
-      image: foodProcessingImage,
+      description:
+        "Specialized engineering support for biopharmaceutical manufacturing, gene therapy labs, and precision biotechnology facilities.",
+      image: biotechImage,
+      badge: "Core Sector",
     },
     {
-      title: "Sustainable Energy & Infrastructure",
-      description: "Renewable energy system design and utility infrastructure modernization focused on environmental sustainability and grid optimization.",
-      image: sustainableImage,
+      title: "Industrial Automation & Robotics",
+      description:
+        "Intelligent automation architectures, SCADA, PLC programming, and robotics engineered to maximize throughput and compliance.",
+      image: automationImage,
+      badge: "High Demand",
     },
     {
-      title: "Food & Beverage Technology",
-      description: "Advanced process engineering and automation solutions ensuring food safety standards while maximizing production efficiency and quality control.",
+      title: "Pharmaceutical Systems & Cleanrooms",
+      description:
+        "Commissioning, qualification, and validation (CQV) for FDA-regulated facilities, aseptic packaging, and sterile filling lines.",
+      image: technicalImage,
+      badge: "cGMP Standard",
+    },
+    {
+      title: "Sustainable Infrastructure & Clean Energy",
+      description:
+        "Decarbonization, microgrid systems, and advanced power distribution infrastructure engineered for zero-emission operations.",
+      image: renewableImage,
+      badge: "Emerging",
+    },
+    {
+      title: "Food & Beverage Process Engineering",
+      description:
+        "Sanitary design, automated mixing, and continuous processing solutions adhering to strict global food safety requirements.",
       image: foodImage,
+      badge: "Specialized",
     },
     {
-      title: "Advanced Manufacturing Systems",
-      description: "Industry 4.0 implementation strategies and intelligent manufacturing solutions that transform traditional production environments into smart factories.",
-      image: manufacturingImage,
-    },
-    {
-      title: "Software & Technology Innovation",
-      description: "Enterprise software engineering and advanced system architecture for transformative technology solutions and digital infrastructure development.",
+      title: "Software & Digital Healthcare Systems",
+      description:
+        "Enterprise digital infrastructure, cloud validation, laboratory information management systems (LIMS), and secure medical software.",
       image: softwareImage,
+      badge: "Digital Health",
     },
   ];
 
-  const benefits = [
-    "Enhanced project delivery velocity and precision",
-    "Access to world-class engineering talent and expertise",
-    "Revolutionary technical methodologies and best practices",
-    "Comprehensive talent pipeline development strategies",
-    "Implementation of cutting-edge industry standards",
-    "Flexible engineering team scaling and augmentation",
+  const valueProps = [
+    {
+      title: "Rigorous Technical Vetting",
+      description: "Every candidate and consultant undergoes comprehensive peer-level screening by seasoned technical specialists.",
+    },
+    {
+      title: "Rapid Deployment Velocity",
+      description: "Accelerate your critical project timelines with our agile talent pipeline and guaranteed initial shortlist within 48 hours.",
+    },
+    {
+      title: "Full Regulatory Compliance",
+      description: "Deep familiarity with FDA 21 CFR Part 11, cGMP, ISO 13485, and global pharmaceutical quality standards.",
+    },
+    {
+      title: "Flexible Engagement Models",
+      description: "From single specialized contract consultants to turn-key managed engineering pods and permanent executive placement.",
+    },
   ];
 
   return (
-    <div>
+    <div className="bg-[#fcfaf7] text-slate-900">
       {/* Hero Section */}
       <HeroSection />
 
       {/* Services Overview */}
-      <section className="bg-[#ded7bd] px-3 py-4 md:px-6 md:py-6">
-        <div className="rounded-[28px] bg-[#fbf7ea] py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-16 grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
-            <h2 className="max-w-2xl text-5xl font-semibold leading-[1.02] tracking-[-0.04em] animate-fade-up">Integrated Engineering Excellence Under One Roof</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-fade-up">
-              Strategic Engineering Advisory, Advanced Project Leadership, and Elite Technical Talent Solutions
+      <section className="px-3 py-6 sm:px-6 md:px-8">
+        <div className="mx-auto max-w-7xl rounded-[28px] border border-slate-200/80 bg-white px-6 py-20 shadow-sm sm:px-10 md:py-24 lg:px-14">
+          <div className="mb-16 max-w-3xl">
+            <div className="mb-3.5 inline-flex items-center gap-2 rounded-full bg-slate-100 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-slate-700">
+              <Sparkles className="h-3.5 w-3.5 text-emerald-600" />
+              Our Core Disciplines
+            </div>
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
+              Integrated engineering consulting & specialized recruitment.
+            </h2>
+            <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
+              We eliminate technical talent bottlenecks and deliver executive-grade project advisory for modern manufacturing and life sciences pioneers.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
-            {services.map((service, index) => (
-              <div key={service.title} className={`card-professional overflow-hidden hover-lift ${index === 0 ? 'animate-slide-in-left' : 'animate-slide-in-right'}`}>
+          <div className="grid gap-8 lg:grid-cols-2">
+            {services.map((service) => (
+              <div
+                key={service.title}
+                className="group relative flex flex-col overflow-hidden rounded-[24px] border border-slate-200/90 bg-[#faf8f5] transition-all duration-300 hover:-translate-y-1 hover:border-emerald-300 hover:shadow-xl hover:shadow-emerald-950/5"
+              >
+                {/* Image Header */}
                 <div className="relative h-64 overflow-hidden">
                   <img
                     src={service.image}
-                    alt={`${service.title} - Professional engineering solutions`}
-                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                    alt={service.title}
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-                </div>
-                <div className="p-8 md:p-12">
-                  <div className="w-14 h-14 bg-[#CAE7D3] rounded-2xl flex items-center justify-center mb-6 animate-bounce-in animate-stagger-3">
-                    <service.icon className="w-7 h-7 text-black" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-slate-950/20 to-transparent"></div>
+                  <div className="absolute bottom-4 left-6">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white shadow-md">
+                      <service.icon className="h-6 w-6 text-emerald-700" />
+                    </div>
                   </div>
-                  <h3 className="mb-4 animate-fade-up animate-stagger-4">{service.title}</h3>
-                  <p className="text-lg text-muted-foreground leading-relaxed mb-6 animate-fade-up animate-stagger-5">
+                </div>
+
+                {/* Content Body */}
+                <div className="flex flex-1 flex-col p-6 sm:p-8">
+                  <h3 className="text-2xl font-bold text-slate-900 tracking-tight mb-3">
+                    {service.title}
+                  </h3>
+                  <p className="text-slate-600 leading-relaxed mb-6 flex-1">
                     {service.description}
                   </p>
+
+                  {/* Tags */}
+                  <div className="mb-6 flex flex-wrap gap-2">
+                    {service.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full bg-white px-3 py-1 text-xs font-medium text-slate-700 border border-slate-200/80"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <Link
+                    to="/contact"
+                    className="inline-flex items-center text-sm font-semibold text-emerald-700 group-hover:text-emerald-800 transition-colors"
+                  >
+                    Learn more & inquire
+                    <ArrowRight className="ml-1.5 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
                 </div>
               </div>
             ))}
           </div>
         </div>
-        </div>
       </section>
 
       {/* Industry Expertise */}
-      <section className="bg-[#ded7bd] px-3 py-4 md:px-6 md:py-6">
-        <div className="rounded-[28px] bg-[#CAE7D3] py-20 md:py-28 text-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="mb-4 text-black text-5xl tracking-[-0.04em]">Domain-Specific Technical Mastery</h2>
-            <p className="text-xl text-black/70 max-w-3xl mx-auto leading-relaxed">
-              Profound technical understanding across mission-critical engineering sectors and emerging technology landscapes
+      <section className="px-3 py-6 sm:px-6 md:px-8">
+        <div className="mx-auto max-w-7xl rounded-[28px] border border-slate-200/80 bg-white px-6 py-20 shadow-sm sm:px-10 md:py-24 lg:px-14">
+          <div className="mb-16 text-center max-w-3xl mx-auto">
+            <div className="mb-3.5 inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-emerald-800 border border-emerald-200/80">
+              <Factory className="h-3.5 w-3.5 text-emerald-600" />
+              Sectors We Serve
+            </div>
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
+              Domain expertise engineered for mission-critical industries.
+            </h2>
+            <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
+              Our specialists understand the exact technical demands, safety protocols, and regulatory hurdles specific to each vertical.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {industries.map((industry, index) => (
-              <div key={industry.title} className={`bg-[#fbf7ea] rounded-[24px] shadow-soft border border-black/10 hover-glow transition-smooth overflow-hidden group animate-fade-up animate-stagger-${(index % 6) + 1}`}>
-                <div className="relative h-44 overflow-hidden">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {industries.map((industry) => (
+              <div
+                key={industry.title}
+                className="group flex flex-col overflow-hidden rounded-[20px] border border-slate-200/80 bg-[#faf8f5] transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-lg"
+              >
+                <div className="relative h-48 overflow-hidden">
                   <img
                     src={industry.image}
-                    alt={`${industry.title} - Engineering expertise`}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125"
+                    alt={industry.title}
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/35 transition-opacity duration-300 group-hover:opacity-60"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent"></div>
+                  <div className="absolute top-3 right-3">
+                    <span className="rounded-full bg-white/90 backdrop-blur-md px-2.5 py-0.5 text-xs font-semibold text-slate-800 shadow-sm">
+                      {industry.badge}
+                    </span>
+                  </div>
                 </div>
-                <div className="p-6">
-                  <h3 className="mb-3 text-lg text-black transition-colors duration-300">{industry.title}</h3>
-                  <p className="text-black/70 leading-relaxed">
+
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-emerald-700 transition-colors">
+                    {industry.title}
+                  </h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">
                     {industry.description}
                   </p>
                 </div>
@@ -145,91 +236,128 @@ const Index = () => {
             ))}
           </div>
         </div>
-        </div>
       </section>
 
-      {/* Value Proposition */}
-      <section className="bg-[#ded7bd] px-3 py-4 md:px-6 md:py-6">
-        <div className="rounded-[28px] bg-[#fbf7ea] py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="animate-slide-in-left">
-              <h2 className="mb-6 text-5xl tracking-[-0.04em]">Transform. Optimize. Excel.</h2>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed animate-fade-up animate-stagger-2">
-                Our distinguished engineering teams leverage advanced technical knowledge alongside proven implementation frameworks to achieve outstanding outcomes. From strategic planning through final deployment, we champion innovation and drive operational transformation.
+      {/* Value Proposition & KPI Section */}
+      <section className="px-3 py-6 sm:px-6 md:px-8">
+        <div className="mx-auto max-w-7xl rounded-[28px] border border-slate-200/80 bg-white px-6 py-20 shadow-sm sm:px-10 md:py-24 lg:px-14">
+          <div className="grid gap-16 lg:grid-cols-12 lg:items-center">
+            {/* Left Value Props */}
+            <div className="lg:col-span-7">
+              <div className="mb-3.5 inline-flex items-center gap-2 rounded-full bg-slate-100 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-slate-700">
+                <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
+                The Novyra Advantage
+              </div>
+              <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl md:text-5xl leading-tight">
+                Transforming how technical teams scale and execute.
+              </h2>
+              <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed mb-10">
+                Engineering excellence isn't just about placing resumes—it requires true technical fluency, verified industry experience, and rapid execution.
               </p>
 
-              <div className="space-y-4">
-                {benefits.map((benefit, index) => (
-                  <div key={benefit} className={`flex items-center space-x-3 animate-fade-up animate-stagger-${index + 3}`}>
-                    <CheckCircle className="w-5 h-5 text-black flex-shrink-0 animate-bounce-in animate-stagger-3" />
-                    <span className="text-muted-foreground">{benefit}</span>
+              <div className="grid gap-6 sm:grid-cols-2">
+                {valueProps.map((prop) => (
+                  <div key={prop.title} className="rounded-2xl border border-slate-200/70 bg-[#faf8f5] p-5">
+                    <div className="flex items-center gap-2.5 mb-2 font-bold text-slate-900 text-base">
+                      <CheckCircle className="h-4 w-4 text-emerald-600 flex-shrink-0" />
+                      <h4>{prop.title}</h4>
+                    </div>
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                      {prop.description}
+                    </p>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="card-professional p-8 text-center animate-slide-in-right hover-glow">
-              <Award className="w-16 h-16 text-black mx-auto mb-6 animate-float" />
-              <h3 className="mb-4 animate-fade-up animate-stagger-2">Technical Consultancy recognition from clients. </h3>
-              <p className="text-muted-foreground mb-6 leading-relaxed animate-fade-up animate-stagger-3">
-                Honored for exceptional engineering innovation and superior project execution across diverse technical specializations and industry verticals.
-              </p>
-
-              {/* Client Testimonials */}
-              <div className="space-y-6 mb-8">
-                <div className="bg-[#CAE7D3] rounded-2xl p-4 animate-fade-up animate-stagger-4">
-                  <div className="flex items-center justify-center mb-2">
-                    <span className="font-semibold text-black">Pfizer</span>
+            {/* Right KPI & Testimonial Card */}
+            <div className="lg:col-span-5">
+              <div className="rounded-[24px] border border-slate-200 bg-gradient-to-b from-[#faf8f5] to-white p-7 sm:p-9 shadow-md">
+                <div className="mb-6 flex items-center justify-between pb-6 border-b border-slate-200">
+                  <div>
+                    <h3 className="text-xl font-bold text-slate-900">Proven Performance</h3>
+                    <p className="text-xs text-slate-500">Measurable impact across client deployments</p>
                   </div>
-                  <p className="text-sm text-muted-foreground italic">
-                    "Novyra Life Sciences helped us find exceptionally talented engineers who seamlessly integrated into our biotechnology projects. Their technical expertise and professionalism exceeded our expectations."
-                  </p>
-                </div>
-
-                <div className="bg-[#CBD6E2] rounded-2xl p-4 animate-fade-up animate-stagger-5">
-                  <div className="flex items-center justify-center mb-2">
-                    <span className="font-semibold text-black">Novartis</span>
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-100 text-emerald-800">
+                    <Award className="h-5 w-5" />
                   </div>
-                  <p className="text-sm text-muted-foreground italic">
-                    "Working with Novyra Life Sciences transformed our approach to technical recruitment. They consistently deliver world-class engineering talent that drives innovation in our pharmaceutical operations."
-                  </p>
                 </div>
-              </div>
 
-              <div className="grid grid-cols-2 gap-4 text-sm">
-                <div className="animate-scale-in animate-stagger-4">
-                  <div className="text-2xl font-bold text-black mb-1">99%</div>
-                  <div className="text-muted-foreground">Client Success Rate</div>
+                {/* KPI Metrics */}
+                <div className="grid grid-cols-2 gap-4 mb-8">
+                  <div className="rounded-xl bg-white p-4 border border-slate-200/70 shadow-xs">
+                    <div className="text-3xl font-black text-slate-900 tracking-tight">99%</div>
+                    <div className="text-xs font-medium text-slate-500 mt-1">Client Retention Rate</div>
+                  </div>
+                  <div className="rounded-xl bg-white p-4 border border-slate-200/70 shadow-xs">
+                    <div className="text-3xl font-black text-emerald-700 tracking-tight">&lt; 3 hrs</div>
+                    <div className="text-xs font-medium text-slate-500 mt-1">Average Response Time</div>
+                  </div>
+                  <div className="rounded-xl bg-white p-4 border border-slate-200/70 shadow-xs">
+                    <div className="text-3xl font-black text-slate-900 tracking-tight">500+</div>
+                    <div className="text-xs font-medium text-slate-500 mt-1">Technical Engagements</div>
+                  </div>
+                  <div className="rounded-xl bg-white p-4 border border-slate-200/70 shadow-xs">
+                    <div className="text-3xl font-black text-emerald-700 tracking-tight">100%</div>
+                    <div className="text-xs font-medium text-slate-500 mt-1">cGMP & Vetted Credentials</div>
+                  </div>
                 </div>
-                <div className="animate-scale-in animate-stagger-5">
-                  <div className="text-2xl font-bold text-black mb-1">24/7</div>
-                  <div className="text-muted-foreground">Technical Support</div>
+
+                {/* Testimonial Quote */}
+                <div className="rounded-xl bg-white border border-slate-200/80 p-5 shadow-xs">
+                  <div className="flex items-center gap-1 text-emerald-600 mb-2">
+                    {"★".repeat(5)}
+                  </div>
+                  <p className="text-xs sm:text-sm text-slate-700 italic leading-relaxed mb-3">
+                    "Novyra delivered specialized automation and validation engineers who accelerated our biotechnology scale-up by several months. Their technical depth was outstanding."
+                  </p>
+                  <div className="text-xs font-semibold text-slate-900">
+                    Director of Process Engineering, Global Biopharmaceutical Partner
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        </div>
       </section>
 
       {/* CTA Section */}
-      <section className="bg-[#ded7bd] px-3 pb-4 pt-4 md:px-6 md:pb-6 md:pt-6">
-        <div className="rounded-[28px] bg-[#CBD6E2] py-20 md:py-28 text-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="mb-6 text-black text-5xl tracking-[-0.04em] animate-fade-up">Join Forces with Novyra. Witness True Excellence.</h2>
-          <p className="text-xl text-black/75 mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-up animate-stagger-2">
-            Our distinguished engineering professionals possess the technical mastery and proven experience to propel your organization forward. Connect with us to explore how we can transform your engineering objectives into remarkable achievements.
-          </p>
+      <section className="px-3 pb-8 pt-4 sm:px-6 md:px-8">
+        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[28px] border border-slate-800 bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950 px-6 py-20 text-center shadow-xl sm:px-12 md:py-24">
+          <div className="relative z-10 max-w-3xl mx-auto">
+            <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-emerald-400">
+              <Zap className="h-3.5 w-3.5" />
+              Ready to Accelerate Your Projects?
+            </span>
+            <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl">
+              Partner with Novyra. <br />
+              <span className="text-emerald-400">Experience True Technical Excellence.</span>
+            </h2>
+            <p className="mt-5 text-base sm:text-lg text-slate-300 leading-relaxed mb-8 max-w-2xl mx-auto">
+              Connect with our specialized team to explore how we can solve your immediate engineering challenges and scale your technical workforce.
+            </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-scale-in animate-stagger-3">
-            <Link to="/contact">
-              <Button size="lg" variant="outline" className="rounded-full bg-black text-white hover:bg-black/80 border-black px-8 py-4 text-lg hover-glow transition-all duration-300">
-                Connect with Our Team
-              </Button>
-            </Link>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <Link to="/contact">
+                <Button
+                  size="lg"
+                  className="h-13 rounded-full bg-emerald-500 px-8 text-sm font-semibold text-slate-950 hover:bg-emerald-400 shadow-lg shadow-emerald-500/20 sm:h-14 sm:text-base transition-all"
+                >
+                  Start a Conversation
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+              <Link to="/about">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="h-13 rounded-full border-slate-700 bg-slate-900/60 text-white hover:bg-slate-800 px-8 text-sm font-semibold sm:h-14 sm:text-base transition-all"
+                >
+                  Learn About Our Team
+                </Button>
+              </Link>
+            </div>
           </div>
-        </div>
         </div>
       </section>
     </div>

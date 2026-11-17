@@ -1,12 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.svg";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -17,78 +26,95 @@ const Navigation = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="fixed left-4 right-4 top-4 z-50 rounded-[24px] border border-black/10 bg-[#fbf7ea]/88 backdrop-blur-md md:left-8 md:right-8">
+    <nav
+      className={`fixed left-3 right-3 top-3 z-50 transition-all duration-300 sm:left-6 sm:right-6 sm:top-4 md:left-8 md:right-8 ${
+        isScrolled
+          ? "rounded-2xl border border-slate-200/80 bg-white/95 shadow-[0_8px_30px_rgb(0,0,0,0.08)] backdrop-blur-xl"
+          : "rounded-2xl border border-slate-200/60 bg-white/85 shadow-sm backdrop-blur-md"
+      }`}
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 md:h-20">
-          <Link to="/" className="flex items-center space-x-3 transition-all duration-300 hover:opacity-80">
-            <img src={logo} alt="Novyra Life Sciences logo" className="h-11 w-11 object-contain md:h-12 md:w-12" />
-            <div className="hidden sm:block">
-              <h1 className="text-xl md:text-2xl font-bold text-[#111111] transition-colors duration-300">
-                Novyra
-              </h1>
-              <p className="text-xs md:text-sm text-black/55 transition-colors duration-300">Life Sciences</p>
+        <div className="flex h-16 items-center justify-between md:h-20">
+          {/* Logo & Brand */}
+          <Link to="/" className="flex items-center space-x-3 transition-opacity duration-200 hover:opacity-90">
+            <img src={logo} alt="Novyra Life Sciences logo" className="h-10 w-10 object-contain md:h-11 md:w-11" />
+            <div>
+              <div className="flex items-center gap-1.5">
+                <span className="text-xl font-bold tracking-tight text-slate-900 md:text-2xl">
+                  Novyra
+                </span>
+                <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-600"></span>
+              </div>
+              <p className="text-xs font-medium tracking-wide text-slate-500 uppercase">Life Sciences</p>
             </div>
           </Link>
 
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                className={`relative rounded-full px-4 py-2 text-sm font-medium transition-all duration-300 ${isActive(item.path)
-                  ? "bg-black text-white"
-                  : "text-black hover:bg-black/5"
+          {/* Desktop Nav Items */}
+          <div className="hidden items-center space-x-2 md:flex">
+            {navItems.map((item) => {
+              const active = isActive(item.path);
+              return (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className={`rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 ${
+                    active
+                      ? "bg-slate-900 text-white shadow-sm"
+                      : "text-slate-600 hover:bg-slate-100/80 hover:text-slate-900"
                   }`}
-              >
-                {item.name}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
+
+            <div className="ml-3 pl-3 border-l border-slate-200">
+              <Link to="/contact">
+                <Button
+                  size="sm"
+                  className="rounded-full bg-emerald-600 px-5 text-sm font-semibold text-white shadow-sm hover:bg-emerald-700 transition-all"
+                >
+                  Book a Consultation
+                  <ArrowUpRight className="ml-1.5 h-3.5 w-3.5" />
+                </Button>
               </Link>
-            ))}
-            <Link to="/contact">
-              <Button variant="default" size="sm" className="ml-4 rounded-full bg-black px-5 text-white hover:bg-black/80">
-                Get Started
-              </Button>
-            </Link>
+            </div>
           </div>
 
+          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="rounded-full p-2 text-black transition-all duration-300 hover:bg-black/5 md:hidden"
+            aria-label="Toggle navigation menu"
+            className="rounded-full p-2 text-slate-700 transition-all duration-200 hover:bg-slate-100 md:hidden"
           >
-            <div className="relative w-6 h-6">
-              <Menu
-                size={24}
-                className={`absolute transition-all duration-300 ${isMenuOpen ? 'opacity-0 rotate-180' : 'opacity-100 rotate-0'}`}
-              />
-              <X
-                size={24}
-                className={`absolute transition-all duration-300 ${isMenuOpen ? 'opacity-100 rotate-0' : 'opacity-0 -rotate-180'}`}
-              />
-            </div>
+            {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Navigation Menu */}
+      {/* Mobile Navigation Dropdown */}
       {isMenuOpen && (
-        <div className="rounded-b-[24px] border-t border-black/10 bg-[#fbf7ea] md:hidden">
-          <div className="px-4 py-4 space-y-2">
-            {navItems.map((item, index) => (
+        <div className="border-t border-slate-100 rounded-b-2xl bg-white px-4 py-4 shadow-lg md:hidden animate-fade-in">
+          <div className="space-y-1.5">
+            {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
                 onClick={() => setIsMenuOpen(false)}
-                className={`block rounded-full px-4 py-2 text-sm font-medium transition-all duration-300 animate-fade-up animate-stagger-${index + 1} ${isActive(item.path)
-                  ? "bg-black text-white"
-                  : "text-black hover:bg-black/5"
-                  }`}
+                className={`block rounded-xl px-4 py-2.5 text-sm font-medium transition-colors ${
+                  isActive(item.path)
+                    ? "bg-slate-900 text-white"
+                    : "text-slate-700 hover:bg-slate-100"
+                }`}
               >
                 {item.name}
               </Link>
             ))}
-            <div className="pt-2 animate-fade-up animate-stagger-4">
-              <Link to="/contact">
-                <Button variant="default" size="sm" className="w-full rounded-full bg-black text-white hover:bg-black/80">
-                  Get Started
+            <div className="pt-3">
+              <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
+                <Button className="w-full rounded-xl bg-emerald-600 py-2.5 text-sm font-semibold text-white hover:bg-emerald-700">
+                  Book a Consultation
+                  <ArrowUpRight className="ml-1.5 h-4 w-4" />
                 </Button>
               </Link>
             </div>

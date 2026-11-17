@@ -1,49 +1,88 @@
-import { ArrowRight, CirclePlay, ShieldCheck } from "lucide-react";
+import { ArrowRight, CheckCircle2, ShieldCheck, Sparkles, Building2, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-lab-background.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="bg-[#ded7bd] px-3 pb-4 pt-3 md:px-6 md:pb-6 md:pt-5">
-      <div className="relative min-h-[calc(100vh-44px)] overflow-hidden rounded-[24px] border border-black/10 shadow-[0_22px_70px_rgba(31,28,18,0.12)] md:rounded-[28px]">
+    <section className="px-3 pb-3 pt-3 sm:px-6 sm:pb-6 sm:pt-4 md:px-8">
+      <div className="relative min-h-[calc(100vh-32px)] overflow-hidden rounded-[28px] border border-slate-200/80 bg-slate-900 shadow-[0_20px_60px_-15px_rgba(15,23,42,0.15)] md:rounded-[36px]">
+        {/* Background Laboratory Image */}
         <div
-          className="absolute inset-0 bg-cover bg-[position:42%_center] md:bg-center md:bg-fixed"
+          className="absolute inset-0 bg-cover bg-[position:45%_center] md:bg-center"
           style={{ backgroundImage: `url(${heroImage})` }}
         ></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-white/48 via-white/24 to-black/18 md:bg-gradient-to-r md:from-white/88 md:via-white/62 md:to-white/18"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent md:from-black/22"></div>
 
-        <div className="relative flex min-h-[calc(100vh-44px)] items-center px-5 py-24 sm:px-10 md:py-32 lg:px-16">
-          <div className="max-w-4xl">
-            <div className="mb-6 inline-flex items-center gap-3 rounded-full bg-white/72 px-4 py-3 text-sm font-medium text-black shadow-soft backdrop-blur-sm md:mb-10 md:bg-white/78 md:text-base md:backdrop-blur-md">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#CAE7D3] shadow-sm">
-                <ShieldCheck className="h-5 w-5" />
+        {/* Sophisticated Multi-layer Gradient Scrim for crystal clear readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/40 md:w-3/4 lg:w-3/5"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent sm:hidden"></div>
+
+        {/* Hero Content */}
+        <div className="relative flex min-h-[calc(100vh-32px)] items-center px-6 py-28 sm:px-12 md:py-36 lg:px-16">
+          <div className="max-w-3xl">
+            {/* Live Status Badge */}
+            <div className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-emerald-200 bg-emerald-50/90 px-3.5 py-1.5 text-xs font-semibold tracking-wide text-emerald-800 shadow-sm backdrop-blur-md sm:text-sm">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-600"></span>
               </span>
-              Building better technical teams
+              <span>Premier Life Sciences & Technical Consulting</span>
             </div>
 
-            <h1 className="mb-6 max-w-4xl text-[clamp(3rem,13vw,8.2rem)] font-semibold leading-[0.98] tracking-[-0.04em] text-[#111111] md:mb-8">
-              Engineering talent made easier to find.
+            {/* Main Headline */}
+            <h1 className="mb-6 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl md:text-6xl lg:text-6xl lg:leading-[1.1]">
+              Engineering talent <br className="hidden sm:inline" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 via-slate-800 to-emerald-700">
+                made easier to find.
+              </span>
             </h1>
 
-            <p className="mb-8 max-w-2xl text-lg font-semibold leading-8 text-black md:mb-9 md:text-black/82">
-              Novyra connects life sciences, manufacturing, automation, and technical teams with specialized engineering support.
+            {/* Subtitle */}
+            <p className="mb-8 max-w-2xl text-base sm:text-lg md:text-xl font-normal leading-relaxed text-slate-700">
+              Novyra bridges high-growth life sciences, biotechnology, and advanced manufacturing organizations with specialized engineering experts, validation leaders, and project teams.
             </p>
 
-            <div className="flex flex-wrap items-center gap-4 md:gap-6">
+            {/* Action Buttons */}
+            <div className="flex flex-wrap items-center gap-3.5 sm:gap-4">
               <Link to="/contact">
-                <Button size="lg" className="h-14 rounded-full bg-[#111111] px-8 text-base text-white hover:bg-black/80 md:h-16 md:px-10 md:text-lg">
-                  Book a Call
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                <Button
+                  size="lg"
+                  className="h-13 rounded-full bg-slate-900 px-7 text-sm font-semibold text-white shadow-lg shadow-slate-900/20 hover:bg-slate-800 sm:h-14 sm:px-8 sm:text-base transition-all"
+                >
+                  Schedule a Consultation
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
-              <Link to="/about" className="flex items-center gap-3 rounded-full bg-white/70 px-4 py-3 text-base font-medium text-black backdrop-blur-md">
-                <span className="flex h-9 w-9 items-center justify-center rounded-full border border-black">
-                  <CirclePlay className="h-4 w-4 fill-black text-black" />
-                </span>
-                See how it works
+              <Link to="/about">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="h-13 rounded-full border-slate-300 bg-white/90 px-7 text-sm font-semibold text-slate-800 shadow-sm backdrop-blur-md hover:bg-white sm:h-14 sm:px-8 sm:text-base transition-all"
+                >
+                  Our Capabilities
+                </Button>
               </Link>
+            </div>
+
+            {/* Trust & Verification Strip */}
+            <div className="mt-12 pt-8 border-t border-slate-200/80">
+              <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3.5">
+                Key Standards & Technical Disciplines
+              </p>
+              <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs sm:text-sm font-medium text-slate-700">
+                <span className="flex items-center gap-1.5">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-600" />
+                  cGMP & FDA Regulatory Compliance
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-600" />
+                  Robotics & Process Automation
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-600" />
+                  3-Hour Rapid Response SLA
+                </span>
+              </div>
             </div>
           </div>
         </div>

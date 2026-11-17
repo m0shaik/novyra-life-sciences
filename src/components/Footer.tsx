@@ -1,172 +1,133 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, ArrowUpRight } from "lucide-react";
 import logo from "@/assets/logo.svg";
 
 const Footer = () => {
-    const currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear();
 
-    const quickLinks = [
-        { name: "Home", path: "/" },
-        { name: "About Us", path: "/about" },
-        { name: "Contact", path: "/contact" },
-    ];
+  const quickLinks = [
+    { name: "Home", path: "/" },
+    { name: "About Us", path: "/about" },
+    { name: "Services & Expertise", path: "/about#services" },
+    { name: "Contact & Inquiries", path: "/contact" },
+  ];
 
-    const services = [
-        "Engineering Consulting",
-        "Technical Staffing",
-        "Executive Search",
-        "Project Management",
-        "HR & Training Development",
-    ];
+  const services = [
+    "Strategic Engineering Consulting",
+    "Technical Talent Recruitment",
+    "Automation & Robotics Solutions",
+    "CQV & Regulatory Compliance",
+    "Turnkey Project Management",
+  ];
 
-    const industries = [
-        "Automation & Robotics",
-        "Life Sciences",
-        "Renewable Energy",
-        "Manufacturing",
-        "Food & Beverage",
-        "Technology",
-    ];
+  const industries = [
+    "Biotechnology & Life Sciences",
+    "Pharmaceutical Manufacturing",
+    "Industrial Automation & Robotics",
+    "Clean Energy & Decarbonization",
+    "Medical Devices & Digital Health",
+  ];
 
-    return (
-        <footer className="bg-[#CBD6E2] text-black border-t-2 border-black">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Main Footer Content */}
-                <div className="py-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {/* Company Info */}
-                    <div className="lg:col-span-1">
-                        <Link to="/" className="flex items-center space-x-3 mb-6">
-                            <img
-                                src={logo}
-                                alt="Novyra Life Sciences logo"
-                                className="h-12 w-12 object-contain"
-                            />
-                            <div>
-                                <h3 className="text-lg font-bold text-black">
-                                    Novyra <span className="text-black">Life Sciences</span>
-                                </h3>
-                                <p className="text-xs text-black/70">Life sciences engineering & consulting</p>
-                            </div>
-                        </Link>
-                        <p className="text-black/75 leading-relaxed mb-6">
-                            Premier engineering consulting and technical staffing solutions across automation,
-                            life sciences, renewable energy, and advanced manufacturing industries.
-                        </p>
-
-                        {/* Contact Info */}
-                        <div className="space-y-3">
-                            <div className="flex items-center space-x-3 text-sm">
-                                <Phone className="w-4 h-4 text-black" />
-                                <span>+1 858-744-3393</span>
-                            </div>
-                            <div className="flex items-center space-x-3 text-sm">
-                                <Mail className="w-4 h-4 text-black" />
-                                <span>abdul@novyralifesciences.com</span>
-                            </div>
-                            <div className="flex items-center space-x-3 text-sm">
-                                <MapPin className="w-4 h-4 text-black" />
-                                <span>307 S Kendall Ave
-                                    Kalamazoo, Michigan 49006
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Quick Links */}
-                    <div>
-                        <h4 className="text-black font-semibold mb-6">Quick Links</h4>
-                        <ul className="space-y-3">
-                            {quickLinks.map((link) => (
-                                <li key={link.name}>
-                                    <Link
-                                        to={link.path}
-                                        className="text-black/75 hover:text-black transition-smooth text-sm"
-                                    >
-                                        {link.name}
-                                    </Link>
-                                </li>
-                            ))}
-                            <li>
-                                <a
-                                    href="#"
-                                    className="text-black/75 hover:text-black transition-smooth text-sm"
-                                >
-                                    Privacy Policy
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="#"
-                                    className="text-black/75 hover:text-black transition-smooth text-sm"
-                                >
-                                    Terms of Service
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    {/* Services */}
-                    <div>
-                        <h4 className="text-black font-semibold mb-6">Our Services</h4>
-                        <ul className="space-y-3">
-                            {services.map((service) => (
-                                <li key={service} className="text-black/75 text-sm">
-                                    {service}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Industries */}
-                    <div>
-                        <h4 className="text-black font-semibold mb-6">Industries</h4>
-                        <ul className="space-y-3">
-                            {industries.map((industry) => (
-                                <li key={industry} className="text-black/75 text-sm">
-                                    {industry}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
-
-                {/* Bottom Section */}
-                <div className="border-t-2 border-black py-8">
-                    <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                        {/* Copyright */}
-                        <div className="text-black/75 text-sm">
-                            © {currentYear} Novyra <span className="text-black">Life Sciences</span>. All rights reserved.
-                        </div>
-
-                        {/* Social Links */}
-                        <div className="flex space-x-4">
-                            <a
-                                href="#"
-                                className="w-8 h-8 bg-white border border-black rounded-none flex items-center justify-center hover:bg-[#CAE7D3] transition-smooth"
-                                aria-label="LinkedIn"
-                            >
-                                <Linkedin className="w-4 h-4" />
-                            </a>
-                            <a
-                                href="#"
-                                className="w-8 h-8 bg-white border border-black rounded-none flex items-center justify-center hover:bg-[#CAE7D3] transition-smooth"
-                                aria-label="Twitter"
-                            >
-                                <Twitter className="w-4 h-4" />
-                            </a>
-                            <a
-                                href="#"
-                                className="w-8 h-8 bg-white border border-black rounded-none flex items-center justify-center hover:bg-[#CAE7D3] transition-smooth"
-                                aria-label="Facebook"
-                            >
-                                <Facebook className="w-4 h-4" />
-                            </a>
-                        </div>
-                    </div>
-                </div>
+  return (
+    <footer className="border-t border-slate-200/80 bg-slate-950 text-slate-300">
+      <div className="mx-auto max-w-7xl px-6 py-16 sm:px-10 lg:px-12">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+          {/* Company Brand Column */}
+          <div className="space-y-4">
+            <Link to="/" className="flex items-center space-x-3">
+              <img src={logo} alt="Novyra Life Sciences logo" className="h-10 w-10 object-contain brightness-0 invert" />
+              <div>
+                <span className="text-xl font-bold tracking-tight text-white">Novyra</span>
+                <span className="ml-1 text-xs uppercase tracking-wider text-emerald-400 font-semibold">Life Sciences</span>
+              </div>
+            </Link>
+            <p className="text-sm text-slate-400 leading-relaxed">
+              Premier engineering advisory and specialized technical talent recruitment supporting life sciences, automation, and advanced manufacturing leaders nationwide.
+            </p>
+            <div className="pt-2">
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="h-4 w-4" />
+              </a>
             </div>
-        </footer>
-    );
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">
+              Navigation
+            </h4>
+            <ul className="space-y-2.5 text-sm">
+              {quickLinks.map((link) => (
+                <li key={link.name}>
+                  <Link to={link.path} className="text-slate-400 hover:text-white transition-colors">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Services & Disciplines */}
+          <div>
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">
+              Specialized Areas
+            </h4>
+            <ul className="space-y-2.5 text-sm">
+              {industries.map((ind) => (
+                <li key={ind} className="text-slate-400">
+                  {ind}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Details */}
+          <div>
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">
+              Direct Contact
+            </h4>
+            <div className="space-y-3.5 text-sm text-slate-400">
+              <div className="flex items-center space-x-3">
+                <Phone className="h-4 w-4 text-emerald-400 flex-shrink-0" />
+                <a href="tel:+18587443393" className="hover:text-white transition-colors">
+                  +1 (858) 744-3393
+                </a>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Mail className="h-4 w-4 text-emerald-400 flex-shrink-0" />
+                <a href="mailto:contact@novyralifesciences.com" className="hover:text-white transition-colors">
+                  contact@novyralifesciences.com
+                </a>
+              </div>
+              <div className="flex items-start space-x-3">
+                <MapPin className="h-4 w-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                <span>307 S Kendall Ave, Kalamazoo, MI 49006</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="mt-14 border-t border-slate-800/80 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+          <p>© {currentYear} Novyra Life Sciences LLC. All rights reserved.</p>
+          <div className="flex items-center space-x-6">
+            <Link to="/about" className="hover:text-slate-400 transition-colors">
+              About
+            </Link>
+            <Link to="/contact" className="hover:text-slate-400 transition-colors">
+              Contact & Inquiries
+            </Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;
